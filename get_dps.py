@@ -40,6 +40,11 @@ ip       = sys.argv[1]
 devid    = sys.argv[2]
 
 device   = pytuya.OutletDevice(devid,ip,"")
+# To check if you have pytuya 7.0.4 and your plug is 3.3.
+# If set_version is an unkonw method you are not using 7.0.4
+# if set_version is recognised but script doesn't work, just try commenting this command
+device.set_version(3.3)
+
 
 data = 0 #stub for the try except
 try:
