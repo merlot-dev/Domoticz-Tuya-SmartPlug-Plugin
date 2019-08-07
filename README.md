@@ -1,21 +1,21 @@
 # Domoticz-Tuya-SmartPlug-Plugin
 
 A Domoticz plugin to manage Tuya Smart Plug (single and multi socket device)
-This is a modified plugin from the original by Tixi, The original plugin only supported an On/Off switch.
+This is a modified plugin from the original by Tixi and sincze, The original plugin only supported an On/Off switch.
 Now meters for Watt, Voltage, Ampere, kWh (calculated) are also created.
 
 ![devices](https://github.com/sincze/Domoticz-Tuya-SmartPlug-Plugin/blob/master/Tuya%20Smartplug.JPG)
 
-Multi socket has not been tested by sincze. I only have 1 socket. Keep in mind I am not a Python developer. 
+Multi socket has not been tested yet by merlot. 
 Plugin is provided on best-effort.
 
 ## ONLY TESTED FOR Raspberry Pi
 
-With Python version 3.5 & Domoticz version V4.1044 (beta)
+With Python version 3.5 & Domoticz version V4.10717
 ## Prerequisites
 
-This plugin is based on the pytuya Python library. For the installation of this library,
-follow the Installation guide below.
+This plugin is based on the pytuya Python library version 7.0.4, which includes support for Protocol version 3.3.
+For the installation of this library, follow the Installation guide below.
 See [`https://github.com/clach04/python-tuya/`](https://github.com/clach04/python-tuya/) for more information.
 
 For the pytuya Python library, you need pycrypto. pycrypto can be installed with pip:
@@ -27,6 +27,7 @@ See [`https://pypi.org/project/pycrypto/`](https://pypi.org/project/pycrypto/) f
 ## Installation
 
 Assuming that domoticz directory is installed in your home directory.
+To be modified, meanwhile install as sincze and just copy my plugin.py version
 
 ```bash
 cd ~/domoticz/plugins
@@ -80,6 +81,7 @@ sudo /etc/init.d/domoticz.sh restart
 | Parameter | Value |
 | :--- | :--- |
 | **IP address** | IP of the Smart Plug eg. 192.168.1.231 |
+| **Version** | version 3.1 or 3.3 of the Smart Plug |
 | **DevID** | devID of the Smart Plug |
 | **Local Key** | Local Key of the Smart Plug |
 | **DPS** |	1 for single socket device and a list of dps separated by ';' for multisocket device eg. 1;2;3;7
